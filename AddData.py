@@ -33,4 +33,8 @@ for col in range(2, len('ONE') + 3):
     
 # f"=SUM({char + '2'}:{char + '3'})/{len(data)}" CALCULATING SUM
 
+# Makinng Bold each col in 1sr row
+for col in range(1,6):
+    ws[get_column_letter(col) + '1'].font = Font(bold = True, color = "0099CCFF")
+    
 wb.save("AddfromPy.xlsx")
