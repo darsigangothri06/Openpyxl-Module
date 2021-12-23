@@ -26,4 +26,11 @@ ws.append(headings)
 for person in data:
     grades = [person] + list(data[person].values())
     ws.append(grades)
+    
+for col in range(2, len('ONE') + 3):
+    char = get_column_letter(col)
+    ws[char + '4'] = f"=SUM({char + '2'}:{char + '3'})/{len(data)}"
+    
+# f"=SUM({char + '2'}:{char + '3'})/{len(data)}" CALCULATING SUM
+
 wb.save("AddfromPy.xlsx")
